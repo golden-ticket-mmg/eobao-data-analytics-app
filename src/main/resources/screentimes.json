@@ -19,6 +19,76 @@
       "timeSpentSinceStart": 240,
       "thresholdExceeded": true,
       "needsInvestigation": true
+    },
+    {
+      "arn": "3",
+      "customerName": "Murali",
+      "appStartDate": "28-Apr-2023",
+      "screenName": "Account Details",
+      "timeSpentOnCurrentScreen": 20,
+      "timeSpentSinceStart": 45,
+      "thresholdExceeded": false,
+      "needsInvestigation": false
+    },
+    {
+      "arn": "4",
+      "customerName": "Kin",
+      "appStartDate": "01-Jul-2023",
+      "screenName": "Business Details",
+      "timeSpentOnCurrentScreen": 50,
+      "timeSpentSinceStart": 60,
+      "thresholdExceeded": true,
+      "needsInvestigation": true
+    },
+    {
+      "arn": "5",
+      "customerName": "Subhashini",
+      "appStartDate": "06-Jul-2023",
+      "screenName": "Team Details",
+      "timeSpentOnCurrentScreen": 60,
+      "timeSpentSinceStart": 60,
+      "thresholdExceeded": true,
+      "needsInvestigation": true
+    },
+    {
+      "arn": "6",
+      "customerName": "Farhad",
+      "appStartDate": "20-Jul-2023",
+      "screenName": "Review Screen",
+      "timeSpentOnCurrentScreen": 5,
+      "timeSpentSinceStart": 30,
+      "thresholdExceeded": false,
+      "needsInvestigation": false
+    },
+    {
+      "arn": "7",
+      "customerName": "Alice",
+      "appStartDate": "01-Aug-2023",
+      "screenName": "Get Started",
+      "timeSpentOnCurrentScreen": 60,
+      "timeSpentSinceStart": 60,
+      "thresholdExceeded": true,
+      "needsInvestigation": true
+    },
+    {
+      "arn": "8",
+      "customerName": "ABC",
+      "appStartDate": "18-Aug-2023",
+      "screenName": "Team Details",
+      "timeSpentOnCurrentScreen": 30,
+      "timeSpentSinceStart": 120,
+      "thresholdExceeded": true,
+      "needsInvestigation": true
+    },
+    {
+      "arn": "9",
+      "customerName": "XYZ",
+      "appStartDate": "19-Aug-2023",
+      "screenName": "Get Started",
+      "timeSpentOnCurrentScreen": 1,
+      "timeSpentSinceStart": 1,
+      "thresholdExceeded": false,
+      "needsInvestigation": false
     }
   ]
 }

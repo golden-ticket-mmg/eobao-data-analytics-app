@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("data-analytics")
 @Slf4j
@@ -18,12 +20,20 @@ public class RestEntryPoint {
         this.screentimeDetailsService = screentimeDetailsService;
     }
 
-    @GetMapping("/{arn}")
-    public ScreenTime getCompany(@PathVariable String arn) {
+    @GetMapping("/screentime/all")
+    public List<ScreenTime> getScreenTimes() {
+        log.info("Looking for all screen times");
+        List<ScreenTime> screenTimes = screentimeDetailsService.findAll();
+        log.info("Found a total of {} screen times", screenTimes.size());
+        return screenTimes;
+    }
+
+    @GetMapping("/screentime/{arn}")
+    public ScreenTime getScreenTime(@PathVariable String arn) {
         log.info("Looking for screen time by ARN {}", arn);
-        ScreenTime company = screentimeDetailsService.findByArn(arn);
-        log.info("For ARN {} found screen time {}", arn, company);
-        return company;
+        ScreenTime screentime = screentimeDetailsService.findByArn(arn);
+        log.info("For ARN {} found screen time {}", arn, screentime);
+        return screentime;
     }
 
 }

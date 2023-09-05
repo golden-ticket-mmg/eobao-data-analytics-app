@@ -5,6 +5,7 @@ import com.hackearth.goldenticket.mmg.eobaodataanalyticsapp.repo.ScreentimesRepo
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -16,7 +17,15 @@ public class ScreentimeDetailsServiceImpl implements ScreentimeDetailsService {
     public ScreentimeDetailsServiceImpl(ScreentimesRepository screentimesRepository) {
         this.screentimesRepository = screentimesRepository;
     }
+    @Override
+    public List<ScreenTime> findAll() {
+        log.info("Looking for all ScreenTime");
+        List<ScreenTime> screenTimes = screentimesRepository.findAll();
+        log.info("Found a total of {} screen times", screenTimes.size());
+        return screenTimes;
+    }
 
+    @Override
     public ScreenTime findByArn(String arn) {
         log.info("Looking for ScreenTime by ARN {} in repo", arn);
         Optional<ScreenTime> optCompany = screentimesRepository.findById(arn);

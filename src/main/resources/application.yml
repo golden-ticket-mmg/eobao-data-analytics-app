@@ -1,0 +1,79 @@
+server:
+  port:
+    9503
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-exception: true
+spring:
+  application:
+    name: eobao-data-analytics-app
+  boot:
+    admin:
+      client:
+        # Where the Spring boot admin resides
+        url: http://localhost:8100
+        # When shut down deregisters from spring boot admin
+        auto-deregistration: true
+
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+logging:
+  file:
+    name: logs/eobao-data-analytics-app.log
+    max-history: 5
+    max-size: 10MB
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.hackearth: DEBUG
+    org.hibernate: INFO
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+management:
+  endpoint:
+    env:
+      # show the values in actuator/env endpoint
+      # e.g. http://localhost:8101/actuator/env
+      show-values: ALWAYS
+    configprops:
+      # show the values in actuator/configprops endpoint
+      # e.g. http://localhost:8101/actuator/configprops
+      show-values: ALWAYS
+    health:
+      # Note show-details
+      show-details: ALWAYS
+    shutdown:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    enabledByDefault: true
+    env:
+      # mask these values in actuator/env endpoint
+      keys-to-sanitize: password,secret
+    configprops:
+      # mask these values in actuator/configprops endpoint
+      keys-to-sanitize: password,secret
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+    build:
+      enabled: true
+    git:
+      # All the GIT info
+      mode: full
+      enabled: true
+    java:
+      enabled: true
+    os:
+      enabled: true

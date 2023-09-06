@@ -17,12 +17,12 @@
                 <tr>
                     <th> ARN </th>
                     <th> Customer Name </th>
-                    <th> Customer Name </th>
-                    <th> Customer Name </th>
-                    <th> Customer Name </th>
-                    <th> Customer Name </th>
-                    <th> Customer Name </th>
-                    <th> Customer Name </th>
+                    <th> App Start Date </th>
+                    <th> Screen Name </th>
+                    <th> Time on Current Screen </th>
+                    <th> Time Since Start </th>
+                    <th> Threshold Exceeded ? </th>
+                    <th> Needs Investigation ? </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -32,6 +32,13 @@
                 <tr th:each="screentime : ${screentimes}">
                     <td><span th:text="${screentime.arn}"> ARN </span></td>
                     <td><span th:text="${screentime.customerName}"> Customer Name </span></td>
+                    <td><span th:text="${screentime.appStartDate}"> App Start Date </span></td>
+                    <td><span th:text="${screentime.screenName}"> Screen Name </span></td>
+                    <td><span th:text="${screentime.timeSpentOnCurrentScreen}"> Time on Current Screen </span></td>
+                    <td><span th:text="${screentime.timeSpentSinceStart}"> Time Since Start </span></td>
+                    <td><span th:text="${screentime.thresholdExceeded}"> Threshold Exceeded ? </span></td>
+                    <td><span th:text="${screentime.needsInvestigation}"> Needs Investigation ? </span></td>
+
                 </tr>
                 </tbody>
             </table>

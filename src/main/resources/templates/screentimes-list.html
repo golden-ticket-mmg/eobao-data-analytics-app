@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Books</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1> Screentimes </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th> ARN </th>
+                    <th> Customer Name </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${screentimes.empty}">
+                    <td colspan="2"> No Screentimes Available </td>
+                </tr>
+                <tr th:each="screentime : ${screentimes}">
+                    <td><span th:text="${screentime.arn}"> ARN </span></td>
+                    <td><span th:text="${screentime.customerName}"> Customer Name </span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -2,6 +2,7 @@ package com.hackearth.goldenticket.mmg.eobaodataanalyticsapp.service;
 
 import com.hackearth.goldenticket.mmg.eobaodataanalyticsapp.data.ScreenTime;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +35,12 @@ public class RestEntryPoint {
         ScreenTime screentime = screentimeDetailsService.findByArn(arn);
         log.info("For ARN {} found screen time {}", arn, screentime);
         return screentime;
+    }
+
+    @GetMapping("/list")
+    public String showAll(Model model) {
+        model.addAttribute("screentimes", screentimeDetailsService.findAll());
+        return "screentimes-list";
     }
 
 }
